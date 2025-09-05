@@ -1,6 +1,6 @@
 pkgname=freetype2
 pkgver=2.13.3
-pkgrel=1
+pkgrel=2
 pkgdesc="Font rasterization library"
 arch=('x86_64')
 url="https://www.freetype.org/"
@@ -9,6 +9,7 @@ depends=(
     'bash'
     'brotli'
     'bzip2'
+    'harfbuzz'
     'libpng'
     'which'
     'zlib'
@@ -36,6 +37,7 @@ build() {
         --with-bzip2=yes
         --with-png=yes
         --with-brotli=yes
+        --with-harfbuzz=yes
         --disable-static
         ${configure_options}
     )
